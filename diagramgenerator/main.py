@@ -19,7 +19,7 @@ if __name__ == "__main__":
         db_type='mysql',
         host='localhost',
         user='root',
-        password='D@vi7596',
+        password='',
     )
     importer.import_sql_file('output.sql')
     importer.close()
