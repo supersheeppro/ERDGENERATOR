@@ -1,0 +1,136 @@
+[
+  {
+    "title": "Speler",
+    "fields": [
+      {"type": "PK", "name": "SpelerID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "", "name": "Gebruikersnaam", "datatype": "VARCHAR(100)", "not_null": true, "unique": true},
+      {"type": "", "name": "UUID", "datatype": "CHAR(36)", "not_null": true, "unique": true},
+      {"type": "", "name": "EersteLogin", "datatype": "DATETIME", "not_null": true},
+      {"type": "", "name": "LaatsteLogin", "datatype": "DATETIME", "not_null": false},
+      {"type": "", "name": "IsBanned", "datatype": "BOOLEAN", "not_null": true},
+      {"type": "", "name": "Ervaring", "datatype": "INT", "not_null": true},
+      {"type": "", "name": "Level", "datatype": "INT", "not_null": true},
+      {"type": "", "name": "Health", "datatype": "FLOAT", "not_null": true},
+      {"type": "", "name": "Mana", "datatype": "FLOAT", "not_null": true}
+    ]
+  },
+  {
+    "title": "Wereld",
+    "fields": [
+      {"type": "PK", "name": "WereldID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "", "name": "Naam", "datatype": "VARCHAR(100)", "not_null": true, "unique": true},
+      {"type": "", "name": "Seed", "datatype": "BIGINT", "not_null": true},
+      {"type": "", "name": "Type", "datatype": "VARCHAR(50)", "not_null": true},
+      {"type": "FK", "name": "CreatorSpelerID", "datatype": "INT", "not_null": false, "unique": true, "references": {"table": "Speler", "field": "SpelerID"}},
+      {"type": "", "name": "Grootte", "datatype": "VARCHAR(50)", "not_null": false, "unique": false},
+      {"type": "", "name": "Moeilijkheidsgraad", "datatype": "ENUM('Peaceful', 'Easy', 'Normal', 'Hard')", "not_null": true, "unique": false},
+      {"type": "", "name": "IsMultiplayer", "datatype": "BOOLEAN", "not_null": true, "unique": false},
+      {"type": "", "name": "MaxSpelers", "datatype": "INT", "not_null": false, "unique": false},
+      {"type": "", "name": "Tijdsinstelling", "datatype": "ENUM('Dag', 'Nacht', 'Standaard')", "not_null": false, "unique": false},
+      {"type": "", "name": "PVPEnabled", "datatype": "BOOLEAN", "not_null": true, "unique": false},
+      {"type": "", "name": "SpawnBeschermd", "datatype": "BOOLEAN", "not_null": true, "unique": false}
+    ]
+  },
+  {
+    "title": "Item",
+    "fields": [
+      {"type": "PK", "name": "ItemID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "", "name": "Naam", "datatype": "VARCHAR(100)", "not_null": true},
+      {"type": "", "name": "ItemType", "datatype": "VARCHAR(50)", "not_null": true},
+      {"type": "", "name": "MaxStack", "datatype": "INT", "not_null": true},
+      {"type": "", "name": "Durability", "datatype": "INT", "not_null": false}
+    ]
+  },
+  {
+    "title": "SpelerInventaris",
+    "fields": [
+      {"type": "PK", "name": "InventarisID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "FK", "name": "SpelerID", "datatype": "INT", "not_null": true, "unique": true, "references": {"table": "Speler", "field": "SpelerID"}},
+      {"type": "FK", "name": "ItemID", "datatype": "INT", "not_null": true, "references": {"table": "Item", "field": "ItemID"}},
+      {"type": "", "name": "Aantal", "datatype": "INT", "not_null": true},
+      {"type": "", "name": "PositieInInventaris", "datatype": "INT", "not_null": true}
+    ]
+  },
+  {
+    "title": "Positie",
+    "fields": [
+      {"type": "PK", "name": "PositieID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "FK", "name": "SpelerID", "datatype": "INT", "not_null": true, "references": {"table": "Speler", "field": "SpelerID"}},
+      {"type": "FK", "name": "WereldID", "datatype": "INT", "not_null": true, "references": {"table": "Wereld", "field": "WereldID"}},
+      {"type": "", "name": "X", "datatype": "FLOAT", "not_null": true},
+      {"type": "", "name": "Y", "datatype": "FLOAT", "not_null": true},
+      {"type": "", "name": "Z", "datatype": "FLOAT", "not_null": true},
+      {"type": "", "name": "Rotatie", "datatype": "FLOAT", "not_null": false},
+      {"type": "", "name": "Timestamp", "datatype": "DATETIME", "not_null": true}
+    ]
+  },
+  {
+    "title": "Ban",
+    "fields": [
+      {"type": "PK", "name": "BanID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "FK", "name": "SpelerID", "datatype": "INT", "not_null": true, "references": {"table": "Speler", "field": "SpelerID"}},
+      {"type": "", "name": "Reden", "datatype": "VARCHAR(255)", "not_null": true},
+      {"type": "", "name": "StartDatum", "datatype": "DATETIME", "not_null": true},
+      {"type": "", "name": "EindDatum", "datatype": "DATETIME", "not_null": false},
+      {"type": "", "name": "Permanent", "datatype": "BOOLEAN", "not_null": true}
+    ]
+  },
+  {
+    "title": "CraftingRecept",
+    "fields": [
+      {"type": "PK", "name": "ReceptID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "FK", "name": "ResultaatItemID", "datatype": "INT", "not_null": true, "references": {"table": "Item", "field": "ItemID"}},
+      {"type": "", "name": "Aantal", "datatype": "INT", "not_null": true},
+      {"type": "", "name": "Beschrijving", "datatype": "TEXT", "not_null": false}
+    ]
+  },
+  {
+    "title": "CraftingReceptIngredient",
+    "fields": [
+      {"type": "PK", "name": "ReceptIngredientID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "FK", "name": "ReceptID", "datatype": "INT", "not_null": true, "references": {"table": "CraftingRecept", "field": "ReceptID"}},
+      {"type": "FK", "name": "ItemID", "datatype": "INT", "not_null": true, "references": {"table": "Item", "field": "ItemID"}},
+      {"type": "", "name": "Aantal", "datatype": "INT", "not_null": true}
+    ]
+  },
+  {
+    "title": "Structuur",
+    "fields": [
+      {"type": "PK", "name": "StructuurID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "FK", "name": "WereldID", "datatype": "INT", "not_null": true, "references": {"table": "Wereld", "field": "WereldID"}},
+      {"type": "", "name": "Naam", "datatype": "VARCHAR(100)", "not_null": true},
+      {"type": "FK", "name": "MakerSpelerID", "datatype": "INT", "not_null": true, "references": {"table": "Speler", "field": "SpelerID"}},
+      {"type": "", "name": "LocatieX", "datatype": "FLOAT", "not_null": true},
+      {"type": "", "name": "LocatieY", "datatype": "FLOAT", "not_null": true},
+      {"type": "", "name": "LocatieZ", "datatype": "FLOAT", "not_null": true},
+      {"type": "", "name": "DatumGemaakt", "datatype": "DATETIME", "not_null": true}
+    ]
+  },
+  {
+    "title": "Achievement",
+    "fields": [
+      {"type": "PK", "name": "AchievementID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "", "name": "Naam", "datatype": "VARCHAR(100)", "not_null": true},
+      {"type": "", "name": "Beschrijving", "datatype": "TEXT", "not_null": false}
+    ]
+  },
+  {
+    "title": "SpelerAchievement",
+    "fields": [
+      {"type": "PK", "name": "SpelerAchievementID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "FK", "name": "SpelerID", "datatype": "INT", "not_null": true, "references": {"table": "Speler", "field": "SpelerID"}},
+      {"type": "FK", "name": "AchievementID", "datatype": "INT", "not_null": true, "references": {"table": "Achievement", "field": "AchievementID"}},
+      {"type": "", "name": "DatumBehaald", "datatype": "DATETIME", "not_null": true}
+    ]
+  },
+  {
+    "title": "Vrienden",
+    "fields": [
+      {"type": "PK", "name": "VriendschapID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
+      {"type": "FK", "name": "SpelerID1", "datatype": "INT", "not_null": true, "references": {"table": "Speler", "field": "SpelerID"}},
+      {"type": "FK", "name": "SpelerID2", "datatype": "INT", "not_null": true, "references": {"table": "Speler", "field": "SpelerID"}},
+      {"type": "", "name": "DatumToegevoegd", "datatype": "DATETIME", "not_null": true},
+      {"type": "", "name": "Status", "datatype": "VARCHAR(20)", "not_null": true}
+    ]
+  }
+]
