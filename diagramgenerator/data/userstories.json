@@ -1,0 +1,19 @@
+[
+  {
+    "id": "US1",
+    "title": "Inloggen student",
+    "user_story": {
+      "as_a": "student",
+      "i_want": "inloggen op het portaal",
+      "so_that": "ik mijn cijfers kan bekijken"
+    },
+    "description": "De student moet via een beveiligd inlogscherm toegang krijgen tot zijn persoonlijke portaal.",
+    "acceptance_criteria": [
+      "Er is een inlogpagina met invoervelden voor gebruikersnaam en wachtwoord.",
+      "Inloggen werkt alleen met een geldig schoolaccount.",
+      "Bij een foutieve login verschijnt een duidelijke foutmelding.",
+      "Wachtwoorden moeten minimaal 8 karakters bevatten.",
+      "Na succesvol inloggen komt de student op zijn dashboard."
+    ]
+  }
+]

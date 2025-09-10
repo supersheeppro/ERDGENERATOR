@@ -79,7 +79,7 @@ if __name__ == "__main__":
         db_type='mysql',
         host='localhost',
         user='root',
-        password='',
+        password='D@vi7596',
         database='minecraft'
     )
 

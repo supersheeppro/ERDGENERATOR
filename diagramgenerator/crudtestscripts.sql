@@ -16,10 +16,10 @@ DELETE FROM Speler WHERE SpelerID = %s;
 SELECT * FROM Wereld WHERE WereldID = %s;
 
 -- INSERT
-INSERT INTO Wereld (Naam, Seed, Type, CreatorSpelerID, Grootte, Moeilijkheidsgraad, IsMultiplayer, MaxSpelers, Tijdsinstelling, PVPEnabled, SpawnBeschermd) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+INSERT INTO Wereld (Naam, Seed, Type, CreatieDatum, MaxSpelers, Moeilijkheidsgraad, IsPvPEnabled, IsNetherEnabled, IsEndEnabled, MaxBouwHoogte, IsDagNachtCycliAan, IsWeerAan, IsVuurVerspreidingAan, IsMobSpawningAan, IsBlokkenVeranderenAan, IsExplosiesAan, IsEntityGriefingAan, IsCheatsAan, StartSpawnX, StartSpawnY, StartSpawnZ, IsAnimalSpawningAan, IsAutoSaveAan, IsVeiligSpawnPunt, SpawnBeschermingRadius, TijdVanDag, IsVeilig, IsLichtningsVerschijnselenAan, IsAfbrekenAan) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
 
 -- UPDATE
-UPDATE Wereld SET Naam = %s, Seed = %s, Type = %s, CreatorSpelerID = %s, Grootte = %s, Moeilijkheidsgraad = %s, IsMultiplayer = %s, MaxSpelers = %s, Tijdsinstelling = %s, PVPEnabled = %s, SpawnBeschermd = %s WHERE WereldID = %s;
+UPDATE Wereld SET Naam = %s, Seed = %s, Type = %s, CreatieDatum = %s, MaxSpelers = %s, Moeilijkheidsgraad = %s, IsPvPEnabled = %s, IsNetherEnabled = %s, IsEndEnabled = %s, MaxBouwHoogte = %s, IsDagNachtCycliAan = %s, IsWeerAan = %s, IsVuurVerspreidingAan = %s, IsMobSpawningAan = %s, IsBlokkenVeranderenAan = %s, IsExplosiesAan = %s, IsEntityGriefingAan = %s, IsCheatsAan = %s, StartSpawnX = %s, StartSpawnY = %s, StartSpawnZ = %s, IsAnimalSpawningAan = %s, IsAutoSaveAan = %s, IsVeiligSpawnPunt = %s, SpawnBeschermingRadius = %s, TijdVanDag = %s, IsVeilig = %s, IsLichtningsVerschijnselenAan = %s, IsAfbrekenAan = %s WHERE WereldID = %s;
 
 -- DELETE
 DELETE FROM Wereld WHERE WereldID = %s;

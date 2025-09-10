@@ -14,21 +14,39 @@
       {"type": "", "name": "Mana", "datatype": "FLOAT", "not_null": true}
     ]
   },
-  {
+    {
     "title": "Wereld",
     "fields": [
       {"type": "PK", "name": "WereldID", "datatype": "INT", "not_null": true, "unique": true, "auto_increment": true},
       {"type": "", "name": "Naam", "datatype": "VARCHAR(100)", "not_null": true, "unique": true},
       {"type": "", "name": "Seed", "datatype": "BIGINT", "not_null": true},
-      {"type": "", "name": "Type", "datatype": "VARCHAR(50)", "not_null": true},
-      {"type": "FK", "name": "CreatorSpelerID", "datatype": "INT", "not_null": false, "unique": true, "references": {"table": "Speler", "field": "SpelerID"}},
-      {"type": "", "name": "Grootte", "datatype": "VARCHAR(50)", "not_null": false, "unique": false},
-      {"type": "", "name": "Moeilijkheidsgraad", "datatype": "ENUM('Peaceful', 'Easy', 'Normal', 'Hard')", "not_null": true, "unique": false},
-      {"type": "", "name": "IsMultiplayer", "datatype": "BOOLEAN", "not_null": true, "unique": false},
-      {"type": "", "name": "MaxSpelers", "datatype": "INT", "not_null": false, "unique": false},
-      {"type": "", "name": "Tijdsinstelling", "datatype": "ENUM('Dag', 'Nacht', 'Standaard')", "not_null": false, "unique": false},
-      {"type": "", "name": "PVPEnabled", "datatype": "BOOLEAN", "not_null": true, "unique": false},
-      {"type": "", "name": "SpawnBeschermd", "datatype": "BOOLEAN", "not_null": true, "unique": false}
+      {"type": "", "name": "Type", "datatype": "VARCHAR(50)", "not_null": true, "default": "Overworld"},
+      {"type": "", "name": "CreatieDatum", "datatype": "DATETIME", "not_null": false},
+      {"type": "", "name": "MaxSpelers", "datatype": "INT", "not_null": true, "default": 20},
+      {"type": "", "name": "Moeilijkheidsgraad", "datatype": "VARCHAR(20)", "not_null": true, "default": "normal"},
+      {"type": "", "name": "IsPvPEnabled", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsNetherEnabled", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsEndEnabled", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "MaxBouwHoogte", "datatype": "INT", "not_null": true, "default": 256},
+      {"type": "", "name": "IsDagNachtCycliAan", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsWeerAan", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsVuurVerspreidingAan", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsMobSpawningAan", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsBlokkenVeranderenAan", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsExplosiesAan", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsEntityGriefingAan", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsCheatsAan", "datatype": "BOOLEAN", "not_null": true, "default": false},
+      {"type": "", "name": "StartSpawnX", "datatype": "INT", "not_null": true, "default": 0},
+      {"type": "", "name": "StartSpawnY", "datatype": "INT", "not_null": true, "default": 64},
+      {"type": "", "name": "StartSpawnZ", "datatype": "INT", "not_null": true, "default": 0},
+      {"type": "", "name": "IsAnimalSpawningAan", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsAutoSaveAan", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsVeiligSpawnPunt", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "SpawnBeschermingRadius", "datatype": "INT", "not_null": true, "default": 16},
+      {"type": "", "name": "TijdVanDag", "datatype": "BIGINT", "not_null": true, "default": 0},
+      {"type": "", "name": "IsVeilig", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsLichtningsVerschijnselenAan", "datatype": "BOOLEAN", "not_null": true, "default": true},
+      {"type": "", "name": "IsAfbrekenAan", "datatype": "BOOLEAN", "not_null": true, "default": true}
     ]
   },
   {

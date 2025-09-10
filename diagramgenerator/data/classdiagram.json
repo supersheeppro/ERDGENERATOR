@@ -1,0 +1,72 @@
+{
+  "classes": [
+    {
+      "id": "C1",
+      "name": "Student",
+      "attributes": [
+        {"name": "studentID", "type": "int"},
+        {"name": "naam", "type": "string"},
+        {"name": "email", "type": "string"}
+      ],
+      "methods": [
+        "inloggen()",
+        "cijfersBekijken()"
+      ]
+    },
+    {
+      "id": "C2",
+      "name": "Docent",
+      "attributes": [
+        {"name": "docentID", "type": "int"},
+        {"name": "naam", "type": "string"},
+        {"name": "email", "type": "string"}
+      ],
+      "methods": [
+        "inloggen()",
+        "cijfersInvoeren()"
+      ]
+    },
+    {
+      "id": "C3",
+      "name": "Cijfer",
+      "attributes": [
+        {"name": "waarde", "type": "float"},
+        {"name": "vak", "type": "string"},
+        {"name": "studentID", "type": "int"}
+      ],
+      "methods": []
+    },
+    {
+      "id": "C4",
+      "name": "Klas",
+      "attributes": [
+        {"name": "klasID", "type": "int"},
+        {"name": "naam", "type": "string"}
+      ],
+      "methods": []
+    }
+  ],
+  "relations": [
+    {
+      "from": "Student",
+      "to": "Cijfer",
+      "type": "association",
+      "multiplicity_from": "1",
+      "multiplicity_to": "0..*"
+    },
+    {
+      "from": "Docent",
+      "to": "Cijfer",
+      "type": "association",
+      "multiplicity_from": "1",
+      "multiplicity_to": "0..*"
+    },
+    {
+      "from": "Klas",
+      "to": "Student",
+      "type": "aggregation",
+      "multiplicity_from": "1",
+      "multiplicity_to": "0..*"
+    }
+  ]
+}

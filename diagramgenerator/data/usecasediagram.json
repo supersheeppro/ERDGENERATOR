@@ -1,0 +1,47 @@
+{
+  "system": "Schoolportaal",
+  "actors": [
+    {
+      "id": "A1",
+      "name": "Student"
+    },
+    {
+      "id": "A2",
+      "name": "Docent"
+    }
+  ],
+  "use_cases": [
+    {
+      "id": "UC1",
+      "name": "Inloggen"
+    },
+    {
+      "id": "UC2",
+      "name": "Cijfers bekijken",
+      "includes": ["UC1"]
+    },
+    {
+      "id": "UC3",
+      "name": "Cijfers invoeren",
+      "includes": ["UC1"]
+    }
+  ],
+  "relations": [
+    {
+      "actor_id": "A1",
+      "use_case_id": "UC1"
+    },
+    {
+      "actor_id": "A1",
+      "use_case_id": "UC2"
+    },
+    {
+      "actor_id": "A2",
+      "use_case_id": "UC1"
+    },
+    {
+      "actor_id": "A2",
+      "use_case_id": "UC3"
+    }
+  ]
+}

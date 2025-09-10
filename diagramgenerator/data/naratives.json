@@ -1,0 +1,52 @@
+{
+  "narratives": [
+    {
+      "id": "N1",
+      "title": "Inloggen",
+      "actor": "Student / Docent",
+      "goal": "Inloggen op het schoolportaal",
+      "story": "De gebruiker opent het schoolportaal en voert zijn gebruikersnaam en wachtwoord in. Het systeem controleert de gegevens en laat de gebruiker alleen toe als de inloggegevens correct zijn.",
+      "result": "De gebruiker krijgt toegang tot het persoonlijke dashboard."
+    },
+    {
+      "id": "N2",
+      "title": "Cijfers bekijken",
+      "actor": "Student",
+      "goal": "Zijn behaalde cijfers bekijken",
+      "story": "De student logt in op het portaal en navigeert naar de pagina 'Cijfers'. Het systeem haalt alle relevante cijfers uit de database en toont deze overzichtelijk per vak.",
+      "result": "De student ziet een overzicht van zijn behaalde cijfers per vak."
+    },
+    {
+      "id": "N3",
+      "title": "Cijfers invoeren",
+      "actor": "Docent",
+      "goal": "Nieuwe cijfers invoeren voor studenten",
+      "story": "De docent logt in op het portaal, selecteert een klas en een vak, en vult de behaalde cijfers van studenten in. Het systeem valideert de invoer en slaat de cijfers op in de database.",
+      "result": "De cijfers zijn toegevoegd en zichtbaar voor de juiste studenten."
+    },
+    {
+      "id": "N4",
+      "title": "Profiel bekijken / aanpassen",
+      "actor": "Student / Docent",
+      "goal": "Persoonlijke gegevens bekijken of wijzigen",
+      "story": "De gebruiker opent zijn profielpagina. Hij kan hier persoonlijke gegevens zoals naam, e-mail en telefoonnummer bekijken en aanpassen. Na het wijzigen worden de gegevens opgeslagen.",
+      "result": "De persoonlijke gegevens van de gebruiker zijn correct bijgewerkt."
+    },
+    {
+      "id": "N5",
+      "title": "Wachtwoord wijzigen",
+      "actor": "Student / Docent",
+      "goal": "Veilig wachtwoord wijzigen",
+      "story": "De gebruiker opent de pagina 'Wachtwoord wijzigen' en voert het oude en nieuwe wachtwoord in. Het systeem controleert of het oude wachtwoord correct is en dat het nieuwe wachtwoord aan de vereisten voldoet, en slaat het nieuwe wachtwoord op.",
+      "result": "Het nieuwe wachtwoord is opgeslagen en kan vanaf nu gebruikt worden voor inloggen."
+    },
+    {
+      "id": "N6",
+      "title": "Help / FAQ raadplegen",
+      "actor": "Student / Docent",
+      "goal": "Hulp en antwoorden op veelgestelde vragen krijgen",
+      "story": "De gebruiker opent de pagina 'Help / FAQ'. Het systeem toont een lijst met veelgestelde vragen en antwoorden. De gebruiker kan ook contact opnemen via het contactformulier.",
+      "result": "De gebruiker vindt hulp en kan eventuele vragen stellen via het contactformulier."
+    }
+  ]
+}
